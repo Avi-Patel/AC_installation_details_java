@@ -1,0 +1,24 @@
+Name : Avi
+Contact no : 1234567890
+Addres : wdnkwjdn
+Start date : 11/11/1111
+End date : 11/11/1111
+Horse-power of AC : 1.0
+#Zones : 1
+#Outlets : 1
+Technician Name : s a,s 
+Contact no : 2321111111
+Addres : wedwq
+Start date : 11/11/1111
+End date : 11/11/1111
+Horse-power of AC : 1
+#Zones : 1
+#Outlets : 1
+Technician Name : qwwq
+Contact no : 1111111111
+Addres : sdsfsa
+Start date : 11/11/1111
+End date : 11/11/1111
+Horse-power of AC : 1
+#Zones : 1
+#Outlets : 1
