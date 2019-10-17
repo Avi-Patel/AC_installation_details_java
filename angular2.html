@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+        <script src="angular.min.js"></script>    
+        <script src="script_2.js"></script>
+        <link href="style_2.css" rel="stylesheet" />
+    <body ng-app="myModule"  >
+        <div ng-controller="myController" style="background-color:gray">
+            <div id="one">Order By: <select ng-model="sortcolumn">
+                        <option value="name">Name ASC</option>
+                        <option value="gender">Gender</option>
+                        <option value="dob">DOB</option>
+                        <option value="-salary">Salary DESC</option>
+                        </select></div>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Salary</th>  
+                    <th>Salary($)</th>
+                </tr>
+                </thead> 
+                <tbody>
+                <tr ng-repeat="x in employees | orderBy:sortcolumn">
+                    <td>{{x.name}}</td>
+                    <td>{{x.dob | date:MM/DD/YYYY}}</td>
+                    <td>{{x.gender | lowercase}}</td>
+                    <td>{{x.salary | number: 2}}</td>
+                    <td>{{x.salary | currency:"$":1}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
