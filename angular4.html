@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+        <script src="angular.min.js"></script>    
+        <script src="script_4.js"></script>
+        <link href="style_4.css" rel="stylesheet" />
+    <body ng-app="myModule"  >
+        <div ng-controller="myController">
+            <div id="se">Search : <input type="text" placeholder="Search employees" style="background-color:aqua;border:2px solid black"ng-model="searchtext".name /></div>
+            <table>
+                <thead>
+                <tr>
+                    <th ng-click="sortdata('name')">Name  <div ng-class="getsortclass('name')"></div></th>
+                    <th ng-click="sortdata('marks')">Marks  <div ng-class="getsortclass('marks')"></div></th>
+                    <th ng-click="sortdata('Timing')">Timing  <div ng-class="getsortclass('Timing')"></div></th>
+                    <th ng-click="sortdata('rank')">Rank  <div ng-class="getsortclass('rank')"></div></th>
+                </tr>
+                </thead> 
+                <tbody>
+                <tr ng-repeat="x in contestant | orderBy:sortcolumn :reversesort | filter:searchtext">
+                    <td>{{x.name}}</td>
+                    <td>{{x.marks}}</td>
+                    <td>{{x.Timing}}</td>
+                    <td>{{x.rank}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
