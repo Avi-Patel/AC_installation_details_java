@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+        <script src="angular.min.js"></script>    
+        <script src="script_5.js"></script>
+        <link href="style_5.css" rel="stylesheet" />
+    <body ng-app="myModule"  >
+        <div ng-controller="myController">
+            <div id="se"><input type="text" placeholder="Search name" style="background-color:aqua;border:2px solid black"ng-model="searchtext.name" /> <input type="text" placeholder="Search rank" style="background-color:aqua;border:2px solid black"ng-model="searchtext.rank" />  <input type="checkbox" ng-model="exactmatch"/> Exact Match</div>
+            <table>
+                <thead>
+                <tr>
+                    <th ng-click="sortdata('name')">Name  <div ng-class="getsortclass('name')"></div></th>
+                    <th ng-click="sortdata('marks')">Marks  <div ng-class="getsortclass('marks')"></div></th>
+                    <th ng-click="sortdata('Timing')">Timing  <div ng-class="getsortclass('Timing')"></div></th>
+                    <th ng-click="sortdata('rank')">Rank  <div ng-class="getsortclass('rank')"></div></th>
+                </tr>
+                </thead> 
+                <tbody>
+                <tr ng-repeat="x in contestant | orderBy:sortcolumn :reversesort | filter:searchtext:exactmatch">
+                    <td>{{x.name}}</td>
+                    <td>{{x.marks}}</td>
+                    <td>{{x.Timing}}</td>
+                    <td>{{x.rank}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
